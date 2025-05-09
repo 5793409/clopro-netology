@@ -33,3 +33,5 @@
 
 **доступ с балансировщика web-balance**
 ![alt text](png/6.png)
+
+[Terraform](https://github.com/5793409/clopro-netology/tree/master/15.2)
