@@ -2,7 +2,9 @@
 personal.auto.tfvars
 .terraform.lock.hcl
 **/.terraform/*
+authorized_key.json
 
+old
 # .tfstate files
 *.tfstate
 *.tfstate.*
