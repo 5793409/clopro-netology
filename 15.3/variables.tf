@@ -88,18 +88,20 @@ variable "bucket_config" {
     access_level    = string
     storage_class   = string
     max_bucket_size = number
+    link_access     = bool
+    bucket_access   = bool
     uploaded_name   = string
     image_path      = string
-    content_type    = string
   })
   default = {
     name            = "web.kovtykh.getops.ru"
     access_level    = "public-read"
     storage_class   = "STANDARD"
     max_bucket_size = 104857600
+    link_access     = true
+    bucket_access   = true
     uploaded_name   = "image123.png"
     image_path      = "1111.png"
-    content_type    = "image/png"
   }
 }
 
@@ -130,4 +132,24 @@ variable "load_balancer_config" {
 variable "target_group_name" {
   default     = "target-group"
   description = "target-group name"
+}
+
+variable "kms_key_name" {
+  default     = "s3-bucket-key"
+  description = "kms-key name"
+}
+
+variable "kms_key_algorithm" {
+  default     = "AES_256"
+  description = "kms-key algorithm"
+}
+
+variable "kms_key_expiration" {
+  default     = "8760h"
+  description = "kms-key expiration"
+}
+
+variable "sse_algorithm" {
+  default     = "aws:kms"
+  description = "sse algorithm"
 }
